@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorPrimaryGuardian">#2196F3</color>
+    <color name="colorPrimaryDarkGuardian">#1976D2</color>
+    <color name="colorAccentGuardian">@color/colorAccent</color>
+
+    <color name="colorPrimaryRevenant">#F44336</color>
+    <color name="colorPrimaryDarkRevenant">#D32F2F</color>
+    <color name="colorAccentRevenant">@color/colorAccent</color>
+
+    <color name="colorPrimaryWarrior">#FFC107</color>
+    <color name="colorPrimaryDarkWarrior">#FFA000</color>
+    <color name="colorAccentWarrior">@color/colorAccent</color>
+
+    <color name="colorPrimaryEngineer">#607D8B</color>
+    <color name="colorPrimaryDarkEngineer">#455A64</color>
+    <color name="colorAccentEngineer">@color/colorAccent</color>
+
+    <color name="colorPrimaryRanger">#8BC34A</color>
+    <color name="colorPrimaryDarkRanger">#689F38</color>
+    <color name="colorAccentRanger">@color/colorAccent</color>
+
+    <color name="colorPrimaryThief">#795548</color>
+    <color name="colorPrimaryDarkThief">#5D4037</color>
+    <color name="colorAccentThief">@color/colorAccent</color>
+
+    <color name="colorPrimaryElementalist">#FF5722</color>
+    <color name="colorPrimaryDarkElementalist">#E64A19</color>
+    <color name="colorAccentElementalist">@color/colorAccent</color>
+
+    <color name="colorPrimaryMesmer">#9C27B0</color>
+    <color name="colorPrimaryDarkMesmer">#7B1FA2</color>
+    <color name="colorAccentMesmer">@color/colorAccent</color>
+
+    <color name="colorPrimaryNecromancer">#4CAF50</color>
+    <color name="colorPrimaryDarkNecromancer">#388E3C</color>
+    <color name="colorAccentNecromancer">@color/colorAccent</color>
+    <color name="windowBackground">#ff0000</color>
+</resources>

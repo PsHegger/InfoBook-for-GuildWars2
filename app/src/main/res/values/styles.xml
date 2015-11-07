@@ -1,0 +1,110 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="elevation">0dp</item>
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- Profession specific themes -->
+    <style name="AppTheme.Guardian" parent="@style/AppTheme" >
+        <item name="colorPrimary">@color/colorPrimaryGuardian</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkGuardian</item>
+    </style>
+
+    <style name="AppTheme.Revenant" parent="@style/AppTheme" >
+        <item name="colorPrimary">@color/colorPrimaryRevenant</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkRevenant</item>
+    </style>
+
+    <style name="AppTheme.Warrior" parent="@style/AppTheme" >
+        <item name="colorPrimary">@color/colorPrimaryWarrior</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkWarrior</item>
+    </style>
+
+    <style name="AppTheme.Engineer" parent="@style/AppTheme" >
+        <item name="colorPrimary">@color/colorPrimaryEngineer</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkEngineer</item>
+    </style>
+
+    <style name="AppTheme.Ranger" parent="@style/AppTheme" >
+        <item name="colorPrimary">@color/colorPrimaryRanger</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkRanger</item>
+    </style>
+
+    <style name="AppTheme.Thief" parent="@style/AppTheme" >
+        <item name="colorPrimary">@color/colorPrimaryThief</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkThief</item>
+    </style>
+
+    <style name="AppTheme.Elementalist" parent="@style/AppTheme" >
+        <item name="colorPrimary">@color/colorPrimaryElementalist</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkElementalist</item>
+    </style>
+
+    <style name="AppTheme.Mesmer" parent="@style/AppTheme" >
+        <item name="colorPrimary">@color/colorPrimaryMesmer</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkMesmer</item>
+    </style>
+
+    <style name="AppTheme.Necromancer" parent="@style/AppTheme" >
+        <item name="colorPrimary">@color/colorPrimaryNecromancer</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkNecromancer</item>
+    </style>
+
+    <style name="AppTheme.Guardian.NoActionBar" parent="AppTheme.Guardian">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.Revenant.NoActionBar" parent="AppTheme.Revenant">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.Warrior.NoActionBar" parent="AppTheme.Warrior">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.Engineer.NoActionBar" parent="AppTheme.Engineer">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.Ranger.NoActionBar" parent="AppTheme.Ranger">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.Thief.NoActionBar" parent="AppTheme.Thief">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.Elementalist.NoActionBar" parent="AppTheme.Elementalist">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.Mesmer.NoActionBar" parent="AppTheme.Mesmer">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.Necromancer.NoActionBar" parent="AppTheme.Necromancer">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+</resources>
