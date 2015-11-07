@@ -16,13 +16,13 @@ public class GameInfoPagerAdapter extends FragmentPagerAdapter {
     public GameInfoPagerAdapter(FragmentManager fm) {
         super(fm);
 
-        mFragments = new NamedFragment[] {
-            ExampleFragment.newInstance("GameInfo"),
-            ExampleFragment.newInstance("GameInfo"),
-            ExampleFragment.newInstance("GameInfo"),
-            ExampleFragment.newInstance("GameInfo"),
-            ExampleFragment.newInstance("GameInfo"),
-            ExampleFragment.newInstance("GameInfo")
+        mFragments = new NamedFragment[]{
+                ExampleFragment.newInstance("GameInfo"),
+                ExampleFragment.newInstance("GameInfo"),
+                ExampleFragment.newInstance("GameInfo"),
+                ExampleFragment.newInstance("GameInfo"),
+                ExampleFragment.newInstance("GameInfo"),
+                ExampleFragment.newInstance("GameInfo")
         };
     }
 

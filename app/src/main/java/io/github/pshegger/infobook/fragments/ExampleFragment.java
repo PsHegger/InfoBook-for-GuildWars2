@@ -11,7 +11,7 @@ import android.view.ViewGroup;
  * Created by pshegger on 2015.10.04..
  */
 public class ExampleFragment extends NamedFragment {
-    private static final int[] colors = new int[] {
+    private static final int[] colors = new int[]{
             Color.RED, Color.YELLOW, Color.GREEN,
             Color.BLUE, Color.CYAN
     };
@@ -44,6 +44,6 @@ public class ExampleFragment extends NamedFragment {
 
     @Override
     public String getName() {
-        return baseName+myId;
+        return baseName + myId;
     }
 }

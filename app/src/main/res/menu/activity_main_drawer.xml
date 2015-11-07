@@ -15,7 +15,9 @@
             android:title="Game Info" />
     </group>
 
-    <item android:title="Settings" android:icon="@android:drawable/ic_menu_preferences">
+    <item
+        android:title="Settings"
+        android:icon="@android:drawable/ic_menu_preferences">
         <menu>
             <item
                 android:id="@+id/nav_set_api_key"

@@ -12,11 +12,8 @@ import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.Map;
 import java.util.Random;
 
-import io.github.pshegger.infobook.model.FileData;
 import retrofit.GsonConverterFactory;
 import retrofit.Retrofit;
 
@@ -44,9 +41,9 @@ public class InfoBookApplication extends Application {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         mAPIKey = prefs.getString(
-                        Constants.Preferences.API_KEY,
-                        "3674D0F3-B7A8-2242-B4C6-FE2E065C86A84C0DB899-DD85-490C-9986-1DA8E629CD21"
-                );
+                Constants.Preferences.API_KEY,
+                "3674D0F3-B7A8-2242-B4C6-FE2E065C86A84C0DB899-DD85-490C-9986-1DA8E629CD21"
+        );
 
         instance = this;
         initRetrofit();

@@ -4,7 +4,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-
 import io.github.pshegger.infobook.fragments.NamedFragment;
 import io.github.pshegger.infobook.fragments.account.BankFragment;
 import io.github.pshegger.infobook.fragments.account.CharactersFragment;
@@ -23,7 +22,7 @@ public class MyAccountPagerAdapter extends FragmentPagerAdapter {
     public MyAccountPagerAdapter(FragmentManager fm) {
         super(fm);
 
-        mFragments = new NamedFragment[] {
+        mFragments = new NamedFragment[]{
                 new CharactersFragment(),
                 new BankFragment(),
                 new WalletFragment(),

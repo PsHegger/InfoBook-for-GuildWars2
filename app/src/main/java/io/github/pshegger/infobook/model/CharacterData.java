@@ -9,17 +9,26 @@ import java.util.Date;
  * Created by pshegger on 2015.10.13..
  */
 public class CharacterData implements Comparable<CharacterData> {
-    @SerializedName("name") String name;
-    @SerializedName("race") String race;
-    @SerializedName("gender") String gender;
-    @SerializedName("profession") String profession;
+    @SerializedName("name")
+    String name;
+    @SerializedName("race")
+    String race;
+    @SerializedName("gender")
+    String gender;
+    @SerializedName("profession")
+    String profession;
 
-    @SerializedName("level") int level;
-    @SerializedName("guild") String guild;
-    @SerializedName("created") Date created;
+    @SerializedName("level")
+    int level;
+    @SerializedName("guild")
+    String guild;
+    @SerializedName("created")
+    Date created;
 
-    @SerializedName("age") long age;
-    @SerializedName("deaths") int deaths;
+    @SerializedName("age")
+    long age;
+    @SerializedName("deaths")
+    int deaths;
 
     public String getName() {
         return name;

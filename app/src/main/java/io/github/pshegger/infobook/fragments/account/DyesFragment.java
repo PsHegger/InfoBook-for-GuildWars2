@@ -28,6 +28,7 @@ public class DyesFragment extends BaseInfoBookFragment {
 
         return v;
     }
+
     @Override
     public String getName() {
         return "Dyes";

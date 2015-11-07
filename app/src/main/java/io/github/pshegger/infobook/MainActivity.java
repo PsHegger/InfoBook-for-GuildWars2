@@ -2,9 +2,6 @@ package io.github.pshegger.infobook;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
@@ -17,9 +14,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.ViewGroup;
-
-import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
 
 import io.github.pshegger.infobook.fragments.PageFragment;
 import io.github.pshegger.infobook.model.GWProfession;
@@ -103,7 +97,7 @@ public class MainActivity extends AppCompatActivity
                     .beginTransaction()
                     .add(R.id.contentLayout, PageFragment.newInstance(type))
                     .commit();
-        }else{
+        } else {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.contentLayout, PageFragment.newInstance(type))
@@ -114,19 +108,19 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void changeProfessionTheme() {
-        final GWProfession[] availableProfessions = new GWProfession[] {
+        final GWProfession[] availableProfessions = new GWProfession[]{
                 GWProfession.Guardian, GWProfession.Revenant, GWProfession.Warrior,
                 GWProfession.Engineer, GWProfession.Ranger, GWProfession.Thief,
                 GWProfession.Elementalist, GWProfession.Mesmer, GWProfession.Necromancer
         };
         final String[] names = new String[availableProfessions.length];
 
-        for (int i=0; i<availableProfessions.length; i++) {
+        for (int i = 0; i < availableProfessions.length; i++) {
             names[i] = availableProfessions[i].name();
         }
 
         int selected = 0;
-        for (int i=0; i<availableProfessions.length; i++) {
+        for (int i = 0; i < availableProfessions.length; i++) {
             if (availableProfessions[i] == mSelectedProfession) {
                 selected = i;
                 break;

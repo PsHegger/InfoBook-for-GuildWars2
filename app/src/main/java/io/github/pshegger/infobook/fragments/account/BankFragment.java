@@ -28,6 +28,7 @@ public class BankFragment extends BaseInfoBookFragment {
 
         return v;
     }
+
     @Override
     public String getName() {
         return "Bank";

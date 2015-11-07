@@ -28,6 +28,7 @@ public class PvPFragment extends BaseInfoBookFragment {
 
         return v;
     }
+
     @Override
     public String getName() {
         return "PvP";

@@ -1,6 +1,5 @@
 package io.github.pshegger.infobook.utils;
 
-import android.content.Context;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
@@ -24,6 +23,7 @@ public class IconLoadHelper {
     }
 
     private static Map<IconType, Map<String, String>> urlCache = new HashMap<>();
+
     static {
         urlCache.put(IconType.File, new HashMap<String, String>());
         urlCache.put(IconType.Item, new HashMap<String, String>());

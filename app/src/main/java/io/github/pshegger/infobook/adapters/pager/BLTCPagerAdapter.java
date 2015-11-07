@@ -16,10 +16,10 @@ public class BLTCPagerAdapter extends FragmentPagerAdapter {
     public BLTCPagerAdapter(FragmentManager fm) {
         super(fm);
 
-        mFragments = new NamedFragment[] {
-            ExampleFragment.newInstance("BLTC"),
-            ExampleFragment.newInstance("BLTC"),
-            ExampleFragment.newInstance("BLTC")
+        mFragments = new NamedFragment[]{
+                ExampleFragment.newInstance("BLTC"),
+                ExampleFragment.newInstance("BLTC"),
+                ExampleFragment.newInstance("BLTC")
         };
     }
 
