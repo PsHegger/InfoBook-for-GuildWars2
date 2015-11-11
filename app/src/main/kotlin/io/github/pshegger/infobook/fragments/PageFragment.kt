@@ -52,6 +52,8 @@ class PageFragment : Fragment() {
         tabs.setBackgroundColor(tabBgColor(container?.context ?: context))
         tabs.setTabTextColors(Color.WHITE, Color.WHITE) // todo
 
+        pager.offscreenPageLimit = pager.adapter.count
+
         return root
     }
 

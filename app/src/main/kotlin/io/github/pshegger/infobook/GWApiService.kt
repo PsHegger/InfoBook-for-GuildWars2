@@ -1,7 +1,9 @@
 package io.github.pshegger.infobook
 
 import io.github.pshegger.infobook.model.CharacterData
+import io.github.pshegger.infobook.model.CurrencyData
 import io.github.pshegger.infobook.model.FileData
+import io.github.pshegger.infobook.model.WalletResponse
 import retrofit.Call
 import retrofit.http.GET
 import retrofit.http.Path
@@ -17,4 +19,7 @@ interface GWApiService {
     @GET("v2/files") fun getAvailableItems(): Call<MutableList<String>>
     @GET("v2/files/{id}") fun getItem(@Path("id") id: String): Call<FileData>
     @GET("v2/files") fun getItemsById(@Query("ids") ids: String): Call<MutableList<FileData>>
+
+    @GET("v2/currencies?ids=all") fun getAvailableCurrencies(): Call<MutableList<CurrencyData>>
+    @GET("v2/account/wallet") fun getWalletContent(): Call<MutableList<WalletResponse>>
 }
