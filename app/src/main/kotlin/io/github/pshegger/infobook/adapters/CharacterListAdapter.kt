@@ -16,7 +16,7 @@ import io.github.pshegger.infobook.utils.OnRecyclerViewItemClickListener
  */
 class CharacterListAdapter(val characters: List<CharacterData>, val listener: OnRecyclerViewItemClickListener?) : RecyclerView.Adapter<CharacterViewHolder>() {
     override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
-        holder.bind(getItem(position), position)
+        holder.bind(this[position], position)
     }
 
     override fun getItemCount(): Int = characters.size
@@ -28,7 +28,7 @@ class CharacterListAdapter(val characters: List<CharacterData>, val listener: On
         return CharacterViewHolder(v, listener)
     }
 
-    fun getItem(position: Int) = characters[position]
+    operator fun get(position: Int) = characters[position]
 }
 
 class CharacterViewHolder(val root: View, val listener: OnRecyclerViewItemClickListener?) : RecyclerView.ViewHolder(root) {

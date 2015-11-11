@@ -21,19 +21,21 @@ import retrofit.Retrofit
  * Created by pshegger on 2015. 11. 10..
  */
 class CharactersFragment : BaseInfoBookFragment() {
-    var characterList: RecyclerView? = null
-    var refreshLayout: SwipeRefreshLayout? = null
+    lateinit var characterList: RecyclerView
+    lateinit var refreshLayout: SwipeRefreshLayout
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View? {
         val root = inflater.inflate(R.layout.fragment_character_list, container, false)
 
-        refreshLayout = root.findViewById(R.id.characters_refresh) as SwipeRefreshLayout
-        refreshLayout?.setOnRefreshListener { refresh() }
+        (root.findViewById(R.id.characters_refresh) as SwipeRefreshLayout).apply {
+            refreshLayout = this
+            setOnRefreshListener { refresh() }
+        }
 
-        characterList = root.findViewById(R.id.characters_list) as RecyclerView
-        characterList?.apply {
+        (root.findViewById(R.id.characters_list) as RecyclerView).apply {
+            characterList = this
             setHasFixedSize(true)
-            layoutManager = LinearLayoutManager(container.context)
+            layoutManager = LinearLayoutManager(context)
         }
 
         return root
@@ -48,10 +50,9 @@ class CharactersFragment : BaseInfoBookFragment() {
     private fun refresh() {
         val service = apiService() ?: return
 
-        refreshLayout?.isRefreshing = true
+        refreshLayout.isRefreshing = true
 
-        service
-                .getAllCharacters()
+        service.getAllCharacters()
                 .enqueue(object : Callback<MutableList<CharacterData>> {
                     override fun onFailure(t: Throwable?) {
                     }
@@ -59,14 +60,14 @@ class CharactersFragment : BaseInfoBookFragment() {
                     override fun onResponse(response: Response<MutableList<CharacterData>>?, retrofit: Retrofit?) {
                         response?.body()?.let {
                             val sorted = it.sorted()
-                            characterList?.adapter = CharacterListAdapter(sorted, object : OnRecyclerViewItemClickListener {
+                            characterList.adapter = CharacterListAdapter(sorted, object : OnRecyclerViewItemClickListener {
                                 override fun onItemClick(position: Int) {
                                     Toast.makeText(activity, sorted[position].name, Toast.LENGTH_SHORT).show()
                                 }
                             })
                         }
 
-                        refreshLayout?.isRefreshing = false
+                        refreshLayout.isRefreshing = false
                     }
                 })
     }

@@ -1,7 +1,9 @@
 package io.github.pshegger.infobook.fragments.account
 
 import android.os.Bundle
+import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,8 +12,6 @@ import io.github.pshegger.infobook.adapters.WalletListAdapter
 import io.github.pshegger.infobook.fragments.BaseInfoBookFragment
 import io.github.pshegger.infobook.model.CurrencyData
 import io.github.pshegger.infobook.model.WalletResponse
-import kotlinx.android.synthetic.fragment_wallet.currencyList
-import kotlinx.android.synthetic.fragment_wallet.currencyRefreshLayout
 import retrofit.Callback
 import retrofit.Response
 import retrofit.Retrofit
@@ -22,19 +22,24 @@ import retrofit.Retrofit
 class WalletFragment : BaseInfoBookFragment() {
     val availableCurrencies: MutableList<CurrencyData> = arrayListOf()
 
+    lateinit var currencyRefreshLayout: SwipeRefreshLayout
+    lateinit var currencyList: RecyclerView
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_wallet, container, false)
-    }
+        val root = inflater.inflate(R.layout.fragment_wallet, container, false)
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        (root.findViewById(R.id.currencyRefreshLayout) as SwipeRefreshLayout).apply {
+            currencyRefreshLayout = this
+            setOnRefreshListener { updateWallet() }
+        }
 
-        currencyRefreshLayout.setOnRefreshListener { updateWallet() }
-
-        currencyList.apply {
+        (root.findViewById(R.id.currencyList) as RecyclerView).apply {
+            currencyList = this
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(context)
         }
+
+        return root
     }
 
     override fun onResume() {
@@ -78,11 +83,7 @@ class WalletFragment : BaseInfoBookFragment() {
                 response?.body()?.let { response ->
                     val walletContent = availableCurrencies.map { currency ->
                         val content = response.firstOrNull { it.id == currency.id }
-
-                        val curr = currency
-                        curr.amount = content?.amount ?: 0
-
-                        curr
+                        currency.copy(amount = content?.amount ?: 0)
                     }
 
                     availableCurrencies.clear()

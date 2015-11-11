@@ -16,7 +16,7 @@ import io.github.pshegger.infobook.utils.OnRecyclerViewItemClickListener
  */
 class WalletListAdapter(val currencies: List<CurrencyData>, val listener: OnRecyclerViewItemClickListener?) : RecyclerView.Adapter<CurrencyViewHolder>() {
     override fun onBindViewHolder(holder: CurrencyViewHolder, position: Int) {
-        holder.bind(getItem(position), position)
+        holder.bind(get(position), position)
     }
 
     override fun getItemCount(): Int = currencies.size
@@ -28,7 +28,7 @@ class WalletListAdapter(val currencies: List<CurrencyData>, val listener: OnRecy
         return CurrencyViewHolder(v, listener)
     }
 
-    fun getItem(position: Int) = currencies[position]
+    operator fun get(i: Int) = currencies[i]
 
 }
 

@@ -6,7 +6,7 @@ import java.util.*
 /**
  * Created by pshegger on 2015. 11. 10..
  */
-class CharacterData(
+data class CharacterData(
         @SerializedName("name") val name: String,
         @SerializedName("race") private val raceString: String,
         @SerializedName("gender") val gender: String,
