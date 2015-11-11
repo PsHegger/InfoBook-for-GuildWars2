@@ -16,7 +16,7 @@ import java.util.*
 class InfoBookApplication : Application() {
     companion object {
         val RNG = Random()
-        var instance: InfoBookApplication? = null
+        lateinit var instance: InfoBookApplication
     }
 
     var apiKey: String = ""

@@ -22,7 +22,7 @@ object IconLoadHelper {
     )
 
     fun loadIcon(type: IconType, id: String, target: ImageView) {
-        val app = InfoBookApplication.Companion.instance ?: return;
+        val app = InfoBookApplication.Companion.instance
 
         urlCache[type]?.let { cache ->
             if (id in cache.keys) {

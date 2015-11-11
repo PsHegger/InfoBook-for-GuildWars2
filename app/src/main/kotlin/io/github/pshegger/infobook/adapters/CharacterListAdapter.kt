@@ -34,7 +34,7 @@ class CharacterListAdapter(val characters: List<CharacterData>, val listener: On
 class CharacterViewHolder(val root: View, val listener: OnRecyclerViewItemClickListener?) : RecyclerView.ViewHolder(root) {
     val ivLogo = root.findViewById(R.id.profession_logo) as ImageView
     val tvName = root.findViewById(R.id.character_name) as TextView
-    val tvProfession = root.findViewById(R.id.character_profession) as TextView
+    val tvRace = root.findViewById(R.id.character_race) as TextView
     val tvLevel = root.findViewById(R.id.character_level) as TextView
     var mPosition = -1
 
@@ -48,7 +48,7 @@ class CharacterViewHolder(val root: View, val listener: OnRecyclerViewItemClickL
         mPosition = position
 
         tvName.text = ch.name
-        tvProfession.text = ch.profession().name
+        tvRace.text = ch.race().name
         tvLevel.text = "" + ch.level
 
         IconLoadHelper.loadIcon(

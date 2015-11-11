@@ -32,7 +32,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/character_profession"
+                android:id="@+id/character_race"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/character_name"

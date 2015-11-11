@@ -37,6 +37,8 @@ dependencies {
 
     compile 'com.google.guava:guava:18.0'
 
+    compile 'io.reactivex:rxandroid:1.0.1'
+
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
 buildscript {

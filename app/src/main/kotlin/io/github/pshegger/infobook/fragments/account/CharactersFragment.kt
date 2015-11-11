@@ -10,12 +10,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import io.github.pshegger.infobook.R
 import io.github.pshegger.infobook.adapters.CharacterListAdapter
+import io.github.pshegger.infobook.datasource.CachedGWDataSource
+import io.github.pshegger.infobook.datasource.LoadResult
 import io.github.pshegger.infobook.fragments.BaseInfoBookFragment
-import io.github.pshegger.infobook.model.CharacterData
 import io.github.pshegger.infobook.utils.OnRecyclerViewItemClickListener
-import retrofit.Callback
-import retrofit.Response
-import retrofit.Retrofit
 
 /**
  * Created by pshegger on 2015. 11. 10..
@@ -48,28 +46,22 @@ class CharactersFragment : BaseInfoBookFragment() {
     }
 
     private fun refresh() {
-        val service = apiService() ?: return
-
         refreshLayout.isRefreshing = true
 
-        service.getAllCharacters()
-                .enqueue(object : Callback<MutableList<CharacterData>> {
-                    override fun onFailure(t: Throwable?) {
-                    }
-
-                    override fun onResponse(response: Response<MutableList<CharacterData>>?, retrofit: Retrofit?) {
-                        response?.body()?.let {
-                            val sorted = it.sorted()
-                            characterList.adapter = CharacterListAdapter(sorted, object : OnRecyclerViewItemClickListener {
-                                override fun onItemClick(position: Int) {
-                                    Toast.makeText(activity, sorted[position].name, Toast.LENGTH_SHORT).show()
-                                }
-                            })
+        CachedGWDataSource.getAllCharacters(false).subscribe { result ->
+            if (result.loadResult != LoadResult.NetworkError) {
+                result.result?.let { characters ->
+                    val sorted = characters.sorted()
+                    characterList.adapter = CharacterListAdapter(sorted, object : OnRecyclerViewItemClickListener {
+                        override fun onItemClick(position: Int) {
+                            Toast.makeText(activity, sorted[position].name, Toast.LENGTH_SHORT).show()
                         }
+                    })
+                }
+            }
 
-                        refreshLayout.isRefreshing = false
-                    }
-                })
+            refreshLayout.isRefreshing = false
+        }
     }
 
     override fun name(): String = "Characters"
